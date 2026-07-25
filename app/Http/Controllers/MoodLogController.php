@@ -53,7 +53,7 @@ class MoodLogController extends Controller
     {
         $therapistId = Auth::id();
 
-        $hasRelation = DB::table('appointment')
+        $hasRelation = DB::table('Appointment')
             ->where('PatientID', $patientId)
             ->where('TherapistID', $therapistId)
             ->exists();
