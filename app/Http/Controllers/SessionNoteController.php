@@ -13,7 +13,7 @@ class SessionNoteController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'SessionID'     => 'required|integer|exists:appointment,SessionID',
+            'SessionID'     => 'required|integer|exists:Appointment,SessionID',
             'EncryptedNote' => 'required|string',
         ]);
 
