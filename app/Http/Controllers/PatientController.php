@@ -27,7 +27,7 @@ class PatientController extends Controller
             ->get();
 
         $moodLogs = MoodLog::where('PatientID', $patientId)->orderBy('LogDate','desc')->get();
-        $followUps = FollowUp::whereHas('appointment', fn($q) => $q->where('PatientID', $patientId))->get();
+        $followUps = FollowUp::whereHas('Appointment', fn($q) => $q->where('PatientID', $patientId))->get();
 
         return view('patient.dashboard', compact('upcoming','past','moodLogs','followUps'));
     }
