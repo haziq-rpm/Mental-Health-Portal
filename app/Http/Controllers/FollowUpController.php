@@ -16,7 +16,7 @@ class FollowUpController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'SessionID' => 'required|exists:appointment,SessionID',
+            'SessionID' => 'required|exists:Appointment,SessionID',
             'FollowUpDate' => 'required|date|after_or_equal:today',
             'ReminderMessage' => 'nullable|string|max:500',
         ]);
